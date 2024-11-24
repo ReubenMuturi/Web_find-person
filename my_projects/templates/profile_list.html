@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Profiles List{% endblock %}
+
+{% block content %}
+    <h2>List of Profiles</h2>
+
+    <h3>Missing Persons</h3>
+    <ul>
+        {% for person in missing_persons %}
+            <li>
+                <a href="{% url 'profiles:profile_detail' person.id %}">{{ person.name }} - {{ person.age }} years old</a>
+            </li>
+        {% empty %}
+            <li>No missing persons found.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Matching Persons</h3>
+    <ul>
+        {% for person in matching_persons %}
+            <li>
+                <a href="{% url 'profiles:profile_detail' person.id %}">{{ person.name }} - {{ person.age }} years old</a>
+            </li>
+        {% empty %}
+            <li>No matching persons found.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+{% endblock %}

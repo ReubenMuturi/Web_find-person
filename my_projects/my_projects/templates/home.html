@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Missing Person Matching System{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Missing Person Matching System</h2>
+    <p>This platform helps you create profiles for missing persons and matching persons.</p>
+
+    <p><a href="{% url 'profiles:create_missing_profile' %}">Create a Missing Profile</a></p>
+    <p><a href="{% url 'profiles:create_matching_profile' %}">Create a Matching Profile</a></p>
+    <p><a href="{% url 'profiles:profile_list' %}">View Profiles</a></p>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - Missing Person Matching System{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Welcome to the Missing Person Matching System</h2>
+    <p>This platform helps you create profiles for missing persons and matching persons.</p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/missing-profile.jpg' %}" class="card-img-top" alt="Create Missing Profile">
+                <div class="card-body">
+                    <h5 class="card-title">Create a Missing Profile</h5>
+                    <p class="card-text">Add information about missing persons to help locate them.</p>
+                    <a href="{% url 'profiles:create_missing_profile' %}" class="btn btn-primary">Create Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/matching-profile.jpg' %}" class="card-img-top" alt="Create Matching Profile">
+                <div class="card-body">
+                    <h5 class="card-title">Create a Matching Profile</h5>
+                    <p class="card-text">Find matching persons and help in locating the missing.</p>
+                    <a href="{% url 'profiles:create_matching_profile' %}" class="btn btn-primary">Create Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/view-profiles.jpg' %}" class="card-img-top" alt="View Profiles">
+                <div class="card-body">
+                    <h5 class="card-title">View Profiles</h5>
+                    <p class="card-text">Browse through the profiles to help in the search efforts.</p>
+                    <a href="{% url 'profiles:profile_list' %}" class="btn btn-primary">View Profiles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
